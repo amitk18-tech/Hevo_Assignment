@@ -9,7 +9,7 @@ PostgreSQL → Hevo → Snowflake → dbt
 ***Source**: PostgreSQL (Docker container on AWS EC2)
 **Ingestion**: Hevo Data (Logical Replication)
 ***Data destination/warehouse**: Snowflake
-***Transformation**: dbt (dbt Core)
+***Transformation**: dbt (Hevo Model dbt and dbt Core)
 
 ---
 
@@ -63,9 +63,9 @@ HEVO_DB.ABC_PUBLIC.CUSTOMERS
 ---
 ## Challenges Faced
 
-* Supabase pooler does not support logical replication
+* Source and destination configurations took time in Hevo. It was a bit tricky to figure out the hostname of snowflake and the warehouse name had to be in Capital letters.
 * Snowflake permission and role configuration issues
-* dbt Cloud UI limitations → switched to dbt Core
+* Postgres setup also took some time and effort
 ## Conclusion
 
-Successfully implemented an end-to-end modern data pipeline with transformation using dbt.
+Successfully implemented an end-to-end modern data pipeline with transformation using db
